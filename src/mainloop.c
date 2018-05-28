@@ -5,4 +5,5 @@ void mainloop()
 {
     char field[FIELD_HEIGHT][FIELD_WIDTH];
     field_init(field);
+    random_fill(field);
 }
