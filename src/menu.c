@@ -14,3 +14,17 @@ int check_input(char input[2])
 {
     return (input[1] == '\0' && (input[0] >= '1' && input[0] <= '3')) ? 0 : 1;
 }
+
+void menu()
+{
+    menu_print();
+    char chose[2];
+    while (true) {
+        scanf("%s",&chose);
+        if (!check_input(chose)) {
+            break;
+        } else {
+            printf("Wrong input, please enter 1-3");
+        }
+    }
+}
