@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "field_print.h"
 
 void field_print(char field[FIELD_HEIGHT][FIELD_WIDTH], int gen, int live)
 {
+    system("clear");
     for (int i = 0; i < 68; i++) {
         putchar(' ');
     }
