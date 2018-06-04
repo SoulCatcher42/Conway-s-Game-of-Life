@@ -19,8 +19,8 @@ void menu()
 {
     menu_print();
     char chose[2];
-    while (true) {
-        scanf("%s",&chose);
+    while (1) {
+        scanf("%s", chose);
         if (!check_input(chose)) {
             break;
         } else {
