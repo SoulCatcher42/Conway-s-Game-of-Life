@@ -1,6 +1,6 @@
-#include "mainloop.h"
+#include "menu.h"
 
 int main()
 {
-    mainloop();
+    menu_print();
 }
