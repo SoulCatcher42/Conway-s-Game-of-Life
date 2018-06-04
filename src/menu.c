@@ -12,5 +12,5 @@ void menu_print()
 
 int check_input(char input[2])
 {
-    return (input[1] == '\0' and (input[0] >= '1' and input[0] <= '3')) ? 0 : 1;
+    return (input[1] == '\0' && (input[0] >= '1' && input[0] <= '3')) ? 0 : 1;
 }
