@@ -24,7 +24,7 @@ build/test/field_test.o: src/field.c src/field.h
 	$(MKDIR_BUILD_TEST)
 	$(OBJ)
 
-bin/game: build/src/main.o build/src/field.o build/src/mainloop.o
+bin/game: build/src/main.o build/src/field.o build/src/mainloop.o build/src/field_print.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
@@ -37,6 +37,10 @@ build/src/mainloop.o: src/mainloop.c src/mainloop.h
 	$(OBJ)
 
 build/src/field.o: src/field.c src/field.h
+	$(MKDIR_BUILD_SRC)
+	$(OBJ)
+
+build/src/field_print.o: src/field_print.c src/field_print.h
 	$(MKDIR_BUILD_SRC)
 	$(OBJ)
 
