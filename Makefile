@@ -12,7 +12,7 @@ default: bin/game
 test: bin/test
 	$<
 
-bin/test: build/test/main.o build/src/field.o build/src/menu.o
+bin/test: build/test/main.o build/src/field.o build/src/menu.o build/src/mainloop.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
