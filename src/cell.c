@@ -12,8 +12,8 @@ int correcting_coordinate(int coordinate, int limit)
 
 int check_cell(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
 {
-    x = correcting_coordinate(x, FIELD_WIDTH);
-    y = correcting_coordinate(y, FIELD_HEIGHT);
+    x = correcting_coordinate(x, FIELD_HEIGHT);
+    y = correcting_coordinate(y, FIELD_WIDTH);
     return (field[x][y] == '*') ? 1 : 0;
 }
 
