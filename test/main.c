@@ -304,6 +304,100 @@ CTEST(check_cell, less_than_zero_y)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(neighbors_count, count1)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    int result = neighbors_count(field, 5, 5);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, count2)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    int result = neighbors_count(field, 5, 5);
+    int expected = 2;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, count5)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    field[4][6] = '*';
+    field[5][4] = '*';
+    field[5][6] = '*';
+    int result = neighbors_count(field, 5, 5);
+    int expected = 5;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, count9)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    field[4][6] = '*';
+    field[5][4] = '*';
+    field[5][6] = '*';
+    field[6][4] = '*';
+    field[6][5] = '*';
+    field[6][6] = '*';
+    int result = neighbors_count(field, 5, 5);
+    int expected = 8;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, all_cells)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    field[4][6] = '*';
+    field[5][4] = '*';
+    field[5][5] = '*';
+    field[5][6] = '*';
+    field[6][4] = '*';
+    field[6][5] = '*';
+    field[6][6] = '*';
+    int result = neighbors_count(field, 5, 5);
+    int expected = 8;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, over_limit)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[FIELD_HEIGHT - 1][FIELD_WIDTH - 1] = '*';
+    field[0][FIELD_WIDTH - 1] = '*';
+    field[FIELD_HEIGHT - 1][0] = '*';
+    int result = neighbors_count(field, 0, 0);
+    int expected = 3;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(neighbors_count, less_than_zero)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[0][0] = '*';
+    field[0][FIELD_WIDTH - 1] = '*';
+    field[FIELD_HEIGHT - 1][0] = '*';
+    int result = neighbors_count(field, FIELD_HEIGHT - 1, FIELD_WIDTH - 1);
+    int expected = 3;
+    ASSERT_EQUAL(expected, result);
+}
+
 int main(int argc, const char** argv) {
     return ctest_main(argc, argv);
 }
