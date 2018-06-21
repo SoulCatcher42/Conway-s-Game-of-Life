@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -std=c99
+CFLAGS = -Wall -Werror -std=c11
 
 OBJ = $(CC) -c $< -o $@ $(CFLAGS)
 MKDIR_BUILD_SRC = mkdir -p build/src
