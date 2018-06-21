@@ -1,3 +1,5 @@
+#pragma once
+
 #include "field.h"
 
 int correcting_coordinate(int coordinate, int limit);
