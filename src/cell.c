@@ -31,7 +31,9 @@ int neighbors_count(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
     return neighbors;
 }
 
-int one_cell_check(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
+int cell_status(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
 {
-
+    neighbors = neighbors_count(field, int x, int y);
+    return neighbors == 3
+            || (neighbors == 2 && check_cell(field, int x, int y)) ? 1 : 0;
 }
