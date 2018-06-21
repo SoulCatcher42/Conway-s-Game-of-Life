@@ -233,6 +233,77 @@ CTEST(correcting_coordinates, less_than_zero5)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(check_cell, correct)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[5][6] = '*';
+    int result = check_cell(field, 5, 6);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, several_cells)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[5][6] = '*';
+    field[5][7] = '*';
+    field[4][6] = '*';
+    int result = check_cell(field, 5, 6);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, incorrect)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    int result = check_cell(field, 5, 6);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, over_limit)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[0][0] = '*';
+    int result = check_cell(field, FIELD_HEIGHT, FIELD_WIDTH);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, less_than_zero_both)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[FIELD_HEIGHT - 1][FIELD_WIDTH - 1] = '*';
+    int result = check_cell(field, -1, -1);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, less_than_zero_x)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[FIELD_HEIGHT - 1][5] = '*';
+    int result = check_cell(field, -1, 5);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(check_cell, less_than_zero_y)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[3][FIELD_WIDTH - 1] = '*';
+    int result = check_cell(field, 3, -1);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
 int main(int argc, const char** argv) {
     return ctest_main(argc, argv);
 }
