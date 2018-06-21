@@ -33,7 +33,7 @@ int neighbors_count(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
 
 int cell_status(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
 {
-    neighbors = neighbors_count(field, int x, int y);
+    int neighbors = neighbors_count(field, x, y);
     return neighbors == 3
-            || (neighbors == 2 && check_cell(field, int x, int y)) ? 1 : 0;
+            || (neighbors == 2 && check_cell(field, x, y)) ? 1 : 0;
 }
