@@ -398,6 +398,129 @@ CTEST(neighbors_count, less_than_zero)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(cell_status, still_alive_2n)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[5][5] = '*';
+    field[4][5] = '*';
+    field[5][6] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, still_alive_3n)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[5][5] = '*';
+    field[4][5] = '*';
+    field[5][6] = '*';
+    field[4][4] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, keep_dead_less_3n)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][5] = '*';
+    field[5][6] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, keep_dead_zero)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, keep_dead_more_3n)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][5] = '*';
+    field[5][4] = '*';
+    field[5][6] = '*';
+    field[4][6] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, revival)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][5] = '*';
+    field[5][4] = '*';
+    field[5][6] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, lonely_death)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[5][5] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, amost_lonely_death)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[5][5] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, overpopulation)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    field[4][6] = '*';
+    field[5][4] = '*';
+    field[5][5] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(cell_status, ultra_overpopulation)
+{
+    char field[FIELD_HEIGHT][FIELD_WIDTH];
+    field_init(field);
+    field[4][4] = '*';
+    field[4][5] = '*';
+    field[4][6] = '*';
+    field[5][4] = '*';
+    field[5][5] = '*';
+    field[5][6] = '*';
+    field[6][4] = '*';
+    field[6][5] = '*';
+    field[6][6] = '*';
+    int result = cell_status(field, 5, 5);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
 int main(int argc, const char** argv) {
     return ctest_main(argc, argv);
 }
