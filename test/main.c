@@ -159,7 +159,7 @@ CTEST(correcting_coordinates, no_correction3)
 CTEST(correcting_coordinates, no_correction4)
 {
     int result = correcting_coordinate(999, 1000);
-    int expected = 9;
+    int expected = 999;
     ASSERT_EQUAL(expected, result);
 }
 
