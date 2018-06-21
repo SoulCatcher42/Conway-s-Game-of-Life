@@ -36,15 +36,15 @@ void menu()
     switch (chose) {
     case '1':
         random_fill(field);
-        mainloop();
+        mainloop(field);
         break;
     case '2':
         // preset(field);
-        mainloop();
+        mainloop(field);
         break;
     case '3':
         // read_file(field);
-        mainloop();
+        mainloop(field);
         break;
     }
 }
