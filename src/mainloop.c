@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "mainloop.h"
 #include "field_print.h"
 #include "cell.h"
@@ -18,7 +19,7 @@ int live_cells(char field[FIELD_HEIGHT][FIELD_WIDTH])
     return live;
 }
 
-void iteration(char field[FIELD_HEIGHT][FIELD_WIDTH])
+int iteration(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     char current_field[FIELD_HEIGHT][FIELD_WIDTH];
     memcpy(current_field, field, sizeof(current_field));
@@ -30,6 +31,7 @@ void iteration(char field[FIELD_HEIGHT][FIELD_WIDTH])
             }
         }
     }
+    return memcmp(current_field, field, sizeof current_field);
 }
 
 void mainloop(char field[FIELD_HEIGHT][FIELD_WIDTH])
@@ -39,7 +41,11 @@ void mainloop(char field[FIELD_HEIGHT][FIELD_WIDTH])
         int live = live_cells(field);
         system("clear");
         field_print(field, ++gen, live);
-        iteration(field);
+        if (!iteration(field)) {
+            printf("Field is stable\n");
+            printf("Press Enter to continue\n");
+            getchar();
+        }
         sleep(1);
     }
 }
