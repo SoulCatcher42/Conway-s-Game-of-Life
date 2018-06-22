@@ -150,3 +150,16 @@ void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[13][56] = '*';
     field[14][56] = '*';
 }
+
+void spaceship(char field[FIELD_HEIGHT][FIELD_WIDTH)
+{
+    field[8][48] = '*';
+    field[8][51] = '*';
+    field[9][52] = '*';
+    field[10][48] = '*';
+    field[10][52] = '*';
+    field[11][49] = '*';
+    field[11][50] = '*';
+    field[11][51] = '*';
+    field[11][52] = '*';
+}
