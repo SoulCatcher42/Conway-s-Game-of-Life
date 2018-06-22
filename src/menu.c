@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "menu.h"
 #include "field.h"
 #include "mainloop.h"
@@ -47,7 +48,10 @@ void menu()
             break;
         case '3':
             // read_file(field);
-            mainloop(field);
+            //mainloop(field);
+            printf("Not realised\n");
+            printf("Back to menu in 3 sec...\n");
+            sleep(3);
             break;
         case '4':
             return;
