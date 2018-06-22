@@ -43,8 +43,9 @@ void mainloop(char field[FIELD_HEIGHT][FIELD_WIDTH])
         field_print(field, ++gen, live);
         if (!iteration(field)) {
             printf("Field is stable\n");
-            printf("Press Enter to continue\n");
-            getchar();
+            printf("Back to menu in 3 sec\n");
+            sleep(3);
+            return;
         }
         sleep(1);
     }
