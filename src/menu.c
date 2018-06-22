@@ -3,6 +3,7 @@
 #include "menu.h"
 #include "field.h"
 #include "mainloop.h"
+#include "preset.h"
 
 void menu_print()
 {
@@ -41,7 +42,7 @@ void menu()
             mainloop(field);
             break;
         case '2':
-            // preset(field);
+            preset(field);
             mainloop(field);
             break;
         case '3':

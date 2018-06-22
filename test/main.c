@@ -1,10 +1,10 @@
 #define CTEST_MAIN
 
 #include <ctest.h>
-
 #include <field.h>
 #include <menu.h>
 #include <cell.h>
+#include <preset.h>
 
 CTEST(field_init, correct)
 {
