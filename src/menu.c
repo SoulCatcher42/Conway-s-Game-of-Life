@@ -42,7 +42,7 @@ void menu()
             mainloop(field);
             break;
         case '2':
-            preset(field);
+            preset_menu(field);
             mainloop(field);
             break;
         case '3':
