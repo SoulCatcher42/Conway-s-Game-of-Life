@@ -163,3 +163,19 @@ void spaceship(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[11][51] = '*';
     field[11][52] = '*';
 }
+
+void pentadecathlon(char field[FIELD_HEIGHT][FIELD_WIDTH)
+{
+    field[10][46] = '*';
+    field[10][47] = '*';
+    field[10][49] = '*';
+    field[10][50] = '*';
+    field[10][51] = '*';
+    field[10][52] = '*';
+    field[10][54] = '*';
+    field[10][55] = '*';
+    field[9][48] = '*';
+    field[11][48] = '*';
+    field[9][53] = '*';
+    field[11][53] = '*';
+}
