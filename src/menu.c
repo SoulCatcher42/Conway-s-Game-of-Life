@@ -32,7 +32,7 @@ void menu()
                 chose = temp[0];
                 break;
             } else {
-                printf("Wrong input, please input 1-3\n");
+                printf("Wrong input, please input 1-4\n");
             }
         }
         switch (chose) {
