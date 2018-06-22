@@ -11,3 +11,8 @@ void preset_menu_print()
     printf("4. Lightweight spaceship\n");
     printf("5. Pentadecathlon\n");
 }
+
+int preset_menu_check_input(char input[2])
+{
+    return !(input[1] == '\0' && (input[0] >= '1' && input[0] <= '5'));
+}
