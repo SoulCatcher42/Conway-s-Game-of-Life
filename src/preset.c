@@ -49,3 +49,12 @@ void preset_menu(char field[FIELD_HEIGHT][FIELD_WIDTH])
         break;
     }
 }
+
+void glider(char field[FIELD_HEIGHT][FIELD_WIDTH)
+{
+    field[9][51] = '*';
+    field[10][51] = '*';
+    field[11][51] = '*';
+    field[11][50] = '*';
+    field[10][49] = '*';
+}
