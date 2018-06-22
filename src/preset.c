@@ -50,7 +50,7 @@ void preset_menu(char field[FIELD_HEIGHT][FIELD_WIDTH])
     }
 }
 
-void glider(char field[FIELD_HEIGHT][FIELD_WIDTH)
+void glider(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     field[9][51] = '*';
     field[10][51] = '*';
@@ -59,7 +59,7 @@ void glider(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[10][49] = '*';
 }
 
-void glider_gun(char field[FIELD_HEIGHT][FIELD_WIDTH)
+void glider_gun(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     field[6][2] = '*';
     field[6][3] = '*';
@@ -99,7 +99,7 @@ void glider_gun(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[5][37] = '*';
 }
 
-void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH)
+void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     field[6][44] = '*';
     field[7][44] = '*';
@@ -151,7 +151,7 @@ void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[14][56] = '*';
 }
 
-void spaceship(char field[FIELD_HEIGHT][FIELD_WIDTH)
+void spaceship(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     field[8][48] = '*';
     field[8][51] = '*';
@@ -164,7 +164,7 @@ void spaceship(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[11][52] = '*';
 }
 
-void pentadecathlon(char field[FIELD_HEIGHT][FIELD_WIDTH)
+void pentadecathlon(char field[FIELD_HEIGHT][FIELD_WIDTH])
 {
     field[10][46] = '*';
     field[10][47] = '*';
