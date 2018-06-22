@@ -21,12 +21,12 @@ int neighbors_count(char field[FIELD_HEIGHT][FIELD_WIDTH], int x, int y)
 {
     int neighbors = 0;
     neighbors += check_cell(field, x - 1, y - 1);
-    neighbors += check_cell(field, x - 1, y    );
+    neighbors += check_cell(field, x - 1, y);
     neighbors += check_cell(field, x - 1, y + 1);
-    neighbors += check_cell(field, x,     y - 1);
-    neighbors += check_cell(field, x,     y + 1);
+    neighbors += check_cell(field, x, y - 1);
+    neighbors += check_cell(field, x, y + 1);
     neighbors += check_cell(field, x + 1, y - 1);
-    neighbors += check_cell(field, x + 1, y    );
+    neighbors += check_cell(field, x + 1, y);
     neighbors += check_cell(field, x + 1, y + 1);
     return neighbors;
 }
