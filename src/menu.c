@@ -15,7 +15,7 @@ void menu_print()
 
 int check_input(char input[2])
 {
-    return (input[1] == '\0' && (input[0] >= '1' && input[0] <= '4')) ? 0 : 1;
+    return !(input[1] == '\0' && (input[0] >= '1' && input[0] <= '4'));
 }
 
 void menu()
