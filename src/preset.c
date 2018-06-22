@@ -98,3 +98,55 @@ void glider_gun(char field[FIELD_HEIGHT][FIELD_WIDTH)
     field[4][37] = '*';
     field[5][37] = '*';
 }
+
+void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH)
+{
+    field[6][44] = '*';
+    field[7][44] = '*';
+    field[8][44] = '*';
+    field[12][44] = '*';
+    field[13][44] = '*';
+    field[14][44] = '*';
+    field[4][46] = '*';
+    field[4][47] = '*';
+    field[4][48] = '*';
+    field[9][46] = '*';
+    field[9][47] = '*';
+    field[9][48] = '*';
+    field[11][46] = '*';
+    field[11][47] = '*';
+    field[11][48] = '*';
+    field[16][46] = '*';
+    field[16][47] = '*';
+    field[16][48] = '*';
+    field[6][49] = '*';
+    field[7][49] = '*';
+    field[8][49] = '*';
+    field[12][49] = '*';
+    field[13][49] = '*';
+    field[14][49] = '*';
+    field[6][51] = '*';
+    field[7][51] = '*';
+    field[8][51] = '*';
+    field[12][51] = '*';
+    field[13][51] = '*';
+    field[14][51] = '*';
+    field[4][52] = '*';
+    field[4][53] = '*';
+    field[4][54] = '*';
+    field[9][52] = '*';
+    field[9][53] = '*';
+    field[9][54] = '*';
+    field[11][52] = '*';
+    field[11][53] = '*';
+    field[11][54] = '*';
+    field[16][52] = '*';
+    field[16][53] = '*';
+    field[16][54] = '*';
+    field[6][56] = '*';
+    field[7][56] = '*';
+    field[8][56] = '*';
+    field[12][56] = '*';
+    field[13][56] = '*';
+    field[14][56] = '*';
+}

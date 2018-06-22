@@ -5,3 +5,4 @@
 
 void field_init(char field[FIELD_HEIGHT][FIELD_WIDTH]);
 void random_fill(char field[FIELD_HEIGHT][FIELD_WIDTH]);
+void pulsar(char field[FIELD_HEIGHT][FIELD_WIDTH);
