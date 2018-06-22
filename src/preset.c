@@ -33,7 +33,7 @@ void preset_menu(char field[FIELD_HEIGHT][FIELD_WIDTH])
     }
     switch (chose) {
     case '1':
-        gliger(field);
+        glider(field);
         break;
     case '2':
         glider_gun(field);
