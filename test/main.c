@@ -63,6 +63,14 @@ CTEST(check_input, correct3)
     ASSERT_EQUAL(expected, result);
 }
 
+CTEST(check_input, correct4)
+{
+    char input[2] = "4";
+    int result = check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
 CTEST(check_input, incorrect1)
 {
     char input[2] = "0";
@@ -105,7 +113,7 @@ CTEST(check_input, incorrect5)
 
 CTEST(check_input, incorrect6)
 {
-    char input[2] = "4";
+    char input[2] = "5";
     int result = check_input(input);
     int expected = 1;
     ASSERT_EQUAL(expected, result);
