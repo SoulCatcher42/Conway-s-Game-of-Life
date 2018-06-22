@@ -13,7 +13,8 @@ test: bin/test
 	$<
 
 bin/test: build/test/main.o build/src/field.o build/src/menu.o\
-		build/src/mainloop.o build/src/cell.o build/src/field_print.o
+		build/src/mainloop.o build/src/cell.o build/src/field_print.o\
+		build/src/preset.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
@@ -22,7 +23,8 @@ build/test/main.o: test/main.c thirdparty/ctest.h
 	$(OBJ) -I thirdparty -I src
 
 bin/game: build/src/main.o build/src/field.o build/src/mainloop.o\
-		build/src/field_print.o build/src/menu.o build/src/cell.o
+		build/src/field_print.o build/src/menu.o build/src/cell.o\
+		build/src/preset.o
 	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 
@@ -47,6 +49,10 @@ build/src/menu.o: src/menu.c src/menu.h
 	$(OBJ)
 
 build/src/cell.o: src/cell.c src/cell.h
+	$(MKDIR_BUILD_SRC)
+	$(OBJ)
+
+build/src/preset.o: src/preset.c src/preset.h
 	$(MKDIR_BUILD_SRC)
 	$(OBJ)
 

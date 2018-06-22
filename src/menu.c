@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "menu.h"
 #include "field.h"
 #include "mainloop.h"
+#include "preset.h"
 
 void menu_print()
 {
@@ -32,7 +34,7 @@ void menu()
                 chose = temp[0];
                 break;
             } else {
-                printf("Wrong input, please input 1-3\n");
+                printf("Wrong input, please input 1-4\n");
             }
         }
         switch (chose) {
@@ -41,12 +43,15 @@ void menu()
             mainloop(field);
             break;
         case '2':
-            // preset(field);
+            preset_menu(field);
             mainloop(field);
             break;
         case '3':
             // read_file(field);
-            mainloop(field);
+            //mainloop(field);
+            printf("Not realised\n");
+            printf("Back to menu in 3 sec...\n");
+            sleep(3);
             break;
         case '4':
             return;

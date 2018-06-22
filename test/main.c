@@ -1,10 +1,10 @@
 #define CTEST_MAIN
 
 #include <ctest.h>
-
 #include <field.h>
 #include <menu.h>
 #include <cell.h>
+#include <preset.h>
 
 CTEST(field_init, correct)
 {
@@ -526,6 +526,110 @@ CTEST(cell_status, ultra_overpopulation)
     field[6][6] = '*';
     int result = cell_status(field, 5, 5);
     int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, correct1)
+{
+    char input[2] = "1";
+    int result = preset_menu_check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, correct2)
+{
+    char input[2] = "2";
+    int result = preset_menu_check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, correct3)
+{
+    char input[2] = "3";
+    int result = preset_menu_check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, correct4)
+{
+    char input[2] = "4";
+    int result = preset_menu_check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, correct5)
+{
+    char input[2] = "5";
+    int result = preset_menu_check_input(input);
+    int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect1)
+{
+    char input[2] = "-1";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect2)
+{
+    char input[2] = "a";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect3)
+{
+    char input[2] = "ab";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect4)
+{
+    char input[2] = "01";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect5)
+{
+    char input[2] = "6";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect6)
+{
+    char input[2] = "9";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect7)
+{
+    char input[2] = "\n";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
+    ASSERT_EQUAL(expected, result);
+}
+
+CTEST(preset_menu_check_input, incorrect8)
+{
+    char input[2] = "\\";
+    int result = preset_menu_check_input(input);
+    int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
 
