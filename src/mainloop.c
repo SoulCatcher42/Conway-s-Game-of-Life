@@ -1,7 +1,10 @@
+#define _POSIX_C_SOURCE 199309L
+
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <time.h>
 #include "mainloop.h"
 #include "field_print.h"
 #include "cell.h"
@@ -47,6 +50,6 @@ void mainloop(char field[FIELD_HEIGHT][FIELD_WIDTH])
             sleep(3);
             return;
         }
-        sleep(1);
+        nanosleep((const struct timespec[]){{0, 100000000L}}, NULL);
     }
 }
